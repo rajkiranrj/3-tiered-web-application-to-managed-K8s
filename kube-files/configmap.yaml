@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-webapp-configmap
+data:
+images: {
+    s: "s3://final-rkrnarala/failed.png",
+    f: "s3://final-rkrnarala/success.jpg"
+    }

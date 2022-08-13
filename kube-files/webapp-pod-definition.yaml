@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-webapp-mysql
+  labels:
+    app: example-app
+    name: simple-webapp-mysql
+spec:
+  selector:
+    matchLabels:
+      name: simple-webapp-mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: simple-webapp-mysql
+spec:
+  containers:
+  - name: simple-webapp-mysql
+    image: 131896765880.dkr.ecr.us-east-1.amazonaws.com/rkrnarala_repo:myimageV1.1
+    ports:
+    - containerPort: 81
+    volumeMounts:
+    - name: app-secret-volumes
+      mountPath: "/opt/app-secret-volumes"
+      readOnly: true
+    envFrom:
+      - secretRef:
+          name: app-secret
+  volumes:
+    - name: app-secret-volumes
+      secret:
+        secretName: app-secret
