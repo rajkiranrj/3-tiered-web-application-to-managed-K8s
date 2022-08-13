@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels:
+    name: mysql
+    
+spec:
+  selector:
+    matchLabels:
+      name: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: mysql 
+    spec:
+       containers:
+      - name: mysql
+        image: mysql:5.6
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: paswrd
+        volumeMounts:
+          - name: mysql-vol
+            mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-vol
+          persistentVolumeClaim:
+            claimName: mysql-pvc    
