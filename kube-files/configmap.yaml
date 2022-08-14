@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: mysql-webapp-configmap
 data:
-images: {
-    s: "s3://final-rkrnarala/failed.png",
-    f: "s3://final-rkrnarala/success.jpg"
-    }
+  name1: "Raj Kiran Reddy Narala"
+  S: "https://rkrnarala.s3.amazonaws.com/success.jpg"
+  F: "https://rkrnarala.s3.amazonaws.com/failed.png"

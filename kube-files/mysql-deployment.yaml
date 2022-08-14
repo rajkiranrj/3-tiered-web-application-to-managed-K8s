@@ -1,10 +1,9 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: mysql
   labels:
     name: mysql
-    
 spec:
   selector:
     matchLabels:
@@ -15,14 +14,18 @@ spec:
       labels:
         name: mysql 
     spec:
-       containers:
+      containers:
       - name: mysql
         image: mysql:5.6
         ports:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: paswrd
+          #value: paswrd
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: DB_Password
         volumeMounts:
           - name: mysql-vol
             mountPath: /var/lib/mysql
