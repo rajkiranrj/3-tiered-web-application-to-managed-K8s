@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: simple-webapp-mysql
   labels:
-    app: example-app
+    #app: example-app
     name: simple-webapp-mysql
 spec:
   selector:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-webapp-mysql
-        image: 131896765880.dkr.ecr.us-east-1.amazonaws.com/rkrnarala_repo:webappV2.4
+        image: 131896765880.dkr.ecr.us-east-1.amazonaws.com/rkrnarala_repo:webappV2.9
         ports:
         - containerPort: 81
         env:
