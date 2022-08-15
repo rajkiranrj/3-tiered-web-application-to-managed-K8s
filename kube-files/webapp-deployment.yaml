@@ -15,6 +15,7 @@ spec:
       labels:
         name: simple-webapp-mysql
     spec:
+      serviceAccountName: clo835
       containers:
       - name: simple-webapp-mysql
         image: 131896765880.dkr.ecr.us-east-1.amazonaws.com/rkrnarala_repo:webappV2.9

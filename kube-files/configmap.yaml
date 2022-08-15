@@ -4,5 +4,5 @@ metadata:
   name: mysql-webapp-configmap
 data:
   name1: "Raj Kiran Reddy Narala"
-  S: "https://rkrnarala.s3.amazonaws.com/success.jpg"
+  S: "https://rkrnarala.s3.amazonaws.com/download.jpg"    #"https://rkrnarala.s3.amazonaws.com/success.jpg"
   F: "https://rkrnarala.s3.amazonaws.com/failed.png"
